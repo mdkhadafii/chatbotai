@@ -1,6 +1,6 @@
 # Backend Chatbot AI RAG
 
-Backend FastAPI untuk aplikasi chatbot AI berbasis RAG sesuai PRD. Implementasi saat ini mencakup Phase 1 foundation, Phase 2 authentication/admin, Phase 3 ingestion pipeline, dan Phase 4 chatbot RAG.
+Backend FastAPI untuk aplikasi chatbot AI berbasis RAG sesuai PRD. Implementasi saat ini mencakup Phase 1 foundation, Phase 2 authentication/admin, Phase 3 ingestion pipeline, Phase 4 chatbot RAG, dan Phase 5 dashboard/monitoring.
 
 ## Struktur Folder
 
@@ -160,5 +160,36 @@ Contoh request:
 {
   "session_id": "session-123",
   "question": "Apa saja syarat pengajuan layanan informasi publik?"
+}
+```
+
+## Phase 5
+
+Fitur dashboard dan monitoring yang sudah tersedia:
+
+- `GET /api/admin/dashboard/summary`
+- `POST /api/admin/retrieval/test`
+- `GET /api/health`
+- `GET /api/admin/audit-logs`
+
+Dashboard summary mengembalikan:
+
+- Total dokumen.
+- Total dokumen indexed.
+- Total dokumen failed.
+- Total chat.
+- Total chunk.
+- Dokumen berdasarkan source type.
+- Dokumen berdasarkan status.
+- Pertanyaan paling sering diajukan.
+- Status koneksi MySQL, ChromaDB, dan Gemini.
+
+Contoh request retrieval test:
+
+```json
+{
+  "query": "Syarat pengajuan layanan informasi publik",
+  "top_k": 5,
+  "source_type": "faq"
 }
 ```
