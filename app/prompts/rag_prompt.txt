@@ -1,0 +1,14 @@
+System instruction:
+{system_instruction}
+
+Pertanyaan user:
+{question}
+
+Konteks dokumen:
+{context}
+
+Aturan jawaban:
+1. Jawab hanya berdasarkan konteks dokumen.
+2. Jika konteks tidak memuat jawaban, sampaikan bahwa informasi belum tersedia.
+3. Gunakan bahasa Indonesia yang sopan, jelas, dan ringkas.
+4. Sertakan rujukan sumber jika tersedia.
