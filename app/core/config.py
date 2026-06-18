@@ -32,6 +32,8 @@ class Settings(BaseSettings):
     GEMINI_API_KEY: str = ""
     GEMINI_LLM_MODEL: str = "gemini-1.5-flash"
     GEMINI_EMBEDDING_MODEL: str = "text-embedding-004"
+    GEMINI_TEMPERATURE: float = 0.2
+    GEMINI_MAX_OUTPUT_TOKENS: int = 1024
 
     CHROMA_HOST: str = "localhost"
     CHROMA_PORT: int = 8001

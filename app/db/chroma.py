@@ -9,7 +9,15 @@ def get_chroma_client():
 
 def get_chroma_collection():
     client = get_chroma_client()
-    return client.get_or_create_collection(name=settings.CHROMA_COLLECTION_NAME)
+    return client.get_or_create_collection(
+        name=settings.CHROMA_COLLECTION_NAME,
+        metadata={"hnsw:space": "cosine"},
+    )
+
+
+def delete_document_vectors(document_id: int) -> None:
+    collection = get_chroma_collection()
+    collection.delete(where={"document_id": document_id})
 
 
 def check_chroma_connection() -> bool:

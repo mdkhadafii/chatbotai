@@ -3,8 +3,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.admin_api import router as admin_router
 from app.api.auth_api import router as auth_router
+from app.api.chatbot_api import router as chatbot_router
 from app.api.document_api import router as document_router
 from app.api.health_api import router as health_router
+from app.api.ingest_api import router as ingest_router
 from app.core.config import settings
 from app.core.exceptions import register_exception_handlers
 from app.db.init_db import init_db
@@ -41,8 +43,10 @@ def create_app() -> FastAPI:
     register_exception_handlers(app)
     app.include_router(health_router, prefix="/api", tags=["Health"])
     app.include_router(auth_router, prefix="/api")
+    app.include_router(chatbot_router, prefix="/api")
     app.include_router(admin_router, prefix="/api")
     app.include_router(document_router, prefix="/api")
+    app.include_router(ingest_router, prefix="/api")
 
     return app
 

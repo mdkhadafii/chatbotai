@@ -1,6 +1,6 @@
 # Backend Chatbot AI RAG
 
-Backend FastAPI untuk aplikasi chatbot AI berbasis RAG sesuai PRD. Implementasi saat ini mencakup Phase 1 foundation dan Phase 2 authentication/admin.
+Backend FastAPI untuk aplikasi chatbot AI berbasis RAG sesuai PRD. Implementasi saat ini mencakup Phase 1 foundation, Phase 2 authentication/admin, Phase 3 ingestion pipeline, dan Phase 4 chatbot RAG.
 
 ## Struktur Folder
 
@@ -105,3 +105,60 @@ password: password123
 ```
 
 Ubah nilai `ADMIN_DEFAULT_EMAIL` dan `ADMIN_DEFAULT_PASSWORD` di `.env` untuk development lokal.
+
+## Phase 3
+
+Fitur ingestion yang sudah tersedia:
+
+- `POST /api/admin/ingest/{document_id}`
+- `POST /api/admin/ingest/bulk`
+- `POST /api/admin/ingest/reindex/{document_id}`
+
+Pipeline ingestion:
+
+1. Membaca file dari `storage/uploads`.
+2. Membersihkan teks.
+3. Memecah teks menjadi chunk berdasarkan `CHUNK_SIZE` dan `CHUNK_OVERLAP`.
+4. Membuat embedding dengan Gemini Embedding.
+5. Menyimpan vector dan metadata ke ChromaDB.
+6. Menyimpan metadata chunk ke MySQL.
+7. Menyimpan teks bersih ke `storage/processed`.
+8. Mengubah status dokumen menjadi `indexed` atau `failed`.
+
+Format file yang didukung:
+
+- PDF
+- TXT
+- DOCX
+- CSV
+- JSON
+- HTML
+
+## Phase 4
+
+Fitur chatbot RAG yang sudah tersedia:
+
+- `POST /api/chat`
+- `GET /api/chat/history`
+- `GET /api/chat/history/{chat_history_id}`
+- `DELETE /api/chat/history/{chat_history_id}`
+
+Alur `POST /api/chat`:
+
+1. Membersihkan pertanyaan user.
+2. Membuat query embedding dengan Gemini Embedding.
+3. Retrieval chunk relevan dari ChromaDB.
+4. Jika skor relevansi di bawah `SIMILARITY_THRESHOLD`, backend menjawab bahwa informasi belum tersedia.
+5. Jika konteks ditemukan, backend menyusun prompt RAG.
+6. Mengirim prompt ke Gemini LLM.
+7. Menyimpan chat history dan sumber dokumen ke MySQL.
+8. Mengembalikan jawaban, sumber, dan confidence score.
+
+Contoh request:
+
+```json
+{
+  "session_id": "session-123",
+  "question": "Apa saja syarat pengajuan layanan informasi publik?"
+}
+```
