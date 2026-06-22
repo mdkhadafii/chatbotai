@@ -26,7 +26,7 @@ class GeminiEmbeddingService:
     def _embed(self, text: str, task_type: str) -> list[float]:
         try:
             response = genai.embed_content(
-                model=settings.GEMINI_EMBEDDING_MODEL,
+                model=self._model_name(),
                 content=text,
                 task_type=task_type,
             )
@@ -45,3 +45,10 @@ class GeminiEmbeddingService:
                 errors={"detail": "Embedding kosong"},
             )
         return embedding
+
+    @staticmethod
+    def _model_name() -> str:
+        model_name = settings.GEMINI_EMBEDDING_MODEL
+        if model_name.startswith(("models/", "tunedModels/")):
+            return model_name
+        return f"models/{model_name}"

@@ -1,0 +1,116 @@
+WARNING:  [23-06-2026 02:10:55] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+INFO:     [23-06-2026 02:10:56] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+DEBUG:    [23-06-2026 02:10:56] Starting component System
+DEBUG:    [23-06-2026 02:10:56] Starting component OpenTelemetryClient
+DEBUG:    [23-06-2026 02:10:56] Starting component SqliteDB
+DEBUG:    [23-06-2026 02:10:56] Starting component SimpleQuotaEnforcer
+DEBUG:    [23-06-2026 02:10:56] Starting component Posthog
+DEBUG:    [23-06-2026 02:10:56] Starting component SimpleRateLimitEnforcer
+DEBUG:    [23-06-2026 02:10:56] Starting component LocalSegmentManager
+DEBUG:    [23-06-2026 02:10:56] Starting component LocalExecutor
+DEBUG:    [23-06-2026 02:10:56] Starting component SegmentAPI
+ERROR:    [23-06-2026 02:10:57] Failed to send telemetry event ServerStartEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:10:57] Started server process [10416]
+INFO:     [23-06-2026 02:10:57] Waiting for application startup.
+INFO:     [23-06-2026 02:10:57] Application startup complete.
+INFO:     [23-06-2026 02:10:57] Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     [23-06-2026 02:16:35] 127.0.0.1:58886 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:35] 127.0.0.1:58887 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:37] 127.0.0.1:62551 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:37] 127.0.0.1:62552 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:37] 127.0.0.1:62552 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:37] 127.0.0.1:58886 - "GET /api/v2/heartbeat HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:37] 127.0.0.1:62551 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:37] 127.0.0.1:58887 - "GET /api/v2/heartbeat HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:40] 127.0.0.1:62038 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:40] 127.0.0.1:62039 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:42] 127.0.0.1:65507 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:42] 127.0.0.1:65507 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:42] 127.0.0.1:62038 - "GET /api/v2/heartbeat HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:42] 127.0.0.1:65508 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:42] 127.0.0.1:65508 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+INFO:     [23-06-2026 02:16:42] 127.0.0.1:62039 - "GET /api/v2/heartbeat HTTP/1.1" 200
+INFO:     [23-06-2026 02:21:43] 127.0.0.1:61626 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:21:45] 127.0.0.1:61628 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:21:45] 127.0.0.1:61628 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:21:45] Collection instansi_knowledge_base already exists, returning existing collection.
+ERROR:    [23-06-2026 02:21:45] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:21:45] 127.0.0.1:61626 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:21:45] Starting component PersistentLocalHnswSegment
+INFO:     [23-06-2026 02:21:45] 127.0.0.1:61626 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/cb2d96fc-cc55-4922-b42c-baa5a6d1c7e7/delete HTTP/1.1" 200
+INFO:     [23-06-2026 02:21:48] 127.0.0.1:61630 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:21:50] 127.0.0.1:61632 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:21:50] 127.0.0.1:61632 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:21:50] Collection instansi_knowledge_base already exists, returning existing collection.
+ERROR:    [23-06-2026 02:21:50] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:21:50] 127.0.0.1:61630 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+INFO:     [23-06-2026 02:21:50] 127.0.0.1:61630 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/cb2d96fc-cc55-4922-b42c-baa5a6d1c7e7/delete HTTP/1.1" 200
+INFO:     [23-06-2026 02:22:54] 127.0.0.1:59542 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:22:56] 127.0.0.1:59544 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:22:56] 127.0.0.1:59544 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:22:56] Collection instansi_knowledge_base already exists, returning existing collection.
+ERROR:    [23-06-2026 02:22:56] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:22:56] 127.0.0.1:59542 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+INFO:     [23-06-2026 02:22:56] 127.0.0.1:59542 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/cb2d96fc-cc55-4922-b42c-baa5a6d1c7e7/delete HTTP/1.1" 200
+INFO:     [23-06-2026 02:23:21] 127.0.0.1:59548 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:23:23] 127.0.0.1:59552 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:23:23] 127.0.0.1:59552 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:23:23] Collection instansi_knowledge_base already exists, returning existing collection.
+ERROR:    [23-06-2026 02:23:23] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:23:23] 127.0.0.1:59548 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+INFO:     [23-06-2026 02:23:23] 127.0.0.1:59548 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+ERROR:    [23-06-2026 02:23:23] Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:23:23] 127.0.0.1:59548 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/cb2d96fc-cc55-4922-b42c-baa5a6d1c7e7/add HTTP/1.1" 201
+INFO:     [23-06-2026 02:23:25] 127.0.0.1:59560 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:23:28] 127.0.0.1:59562 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:23:28] 127.0.0.1:59562 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:23:28] Collection instansi_knowledge_base already exists, returning existing collection.
+ERROR:    [23-06-2026 02:23:28] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:23:28] 127.0.0.1:59560 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+INFO:     [23-06-2026 02:23:28] 127.0.0.1:59560 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/cb2d96fc-cc55-4922-b42c-baa5a6d1c7e7/delete HTTP/1.1" 200
+INFO:     [23-06-2026 02:24:44] 127.0.0.1:63477 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:24:46] 127.0.0.1:63479 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:24:46] 127.0.0.1:63479 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:24:46] Collection instansi_knowledge_base already exists, returning existing collection.
+ERROR:    [23-06-2026 02:24:46] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:24:46] 127.0.0.1:63477 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+INFO:     [23-06-2026 02:24:46] 127.0.0.1:63477 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+INFO:     [23-06-2026 02:24:47] 127.0.0.1:63477 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/cb2d96fc-cc55-4922-b42c-baa5a6d1c7e7/add HTTP/1.1" 201
+INFO:     [23-06-2026 02:27:32] 127.0.0.1:50865 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:27:34] 127.0.0.1:50867 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:27:34] 127.0.0.1:50867 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:27:34] Collection instansi_knowledge_base already exists, returning existing collection.
+ERROR:    [23-06-2026 02:27:34] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:27:34] 127.0.0.1:50865 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+ERROR:    [23-06-2026 02:27:35] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:27:35] 127.0.0.1:50865 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/cb2d96fc-cc55-4922-b42c-baa5a6d1c7e7/query HTTP/1.1" 200
+INFO:     [23-06-2026 02:30:50] 127.0.0.1:55733 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:30:52] 127.0.0.1:55735 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:30:52] 127.0.0.1:55735 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:30:52] Collection instansi_knowledge_base already exists, returning existing collection.
+ERROR:    [23-06-2026 02:30:52] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:30:52] 127.0.0.1:55733 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+INFO:     [23-06-2026 02:30:53] 127.0.0.1:55733 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/cb2d96fc-cc55-4922-b42c-baa5a6d1c7e7/query HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:28] 127.0.0.1:49294 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:28] 127.0.0.1:49295 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:30] 127.0.0.1:49298 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:30] 127.0.0.1:49298 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:30] 127.0.0.1:49294 - "GET /api/v2/heartbeat HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:30] 127.0.0.1:49299 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:30] 127.0.0.1:49299 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:30] 127.0.0.1:49295 - "GET /api/v2/heartbeat HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:32] 127.0.0.1:49302 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:33] 127.0.0.1:49303 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:35] 127.0.0.1:49306 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:35] 127.0.0.1:49306 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:35] 127.0.0.1:49302 - "GET /api/v2/heartbeat HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:35] 127.0.0.1:49307 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:35] 127.0.0.1:49307 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+INFO:     [23-06-2026 02:31:35] 127.0.0.1:49303 - "GET /api/v2/heartbeat HTTP/1.1" 200
+INFO:     [23-06-2026 02:32:12] 127.0.0.1:51521 - "GET /api/v2/auth/identity HTTP/1.1" 200
+INFO:     [23-06-2026 02:32:15] 127.0.0.1:51523 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+INFO:     [23-06-2026 02:32:15] 127.0.0.1:51523 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+DEBUG:    [23-06-2026 02:32:15] Collection instansi_knowledge_base already exists, returning existing collection.
+ERROR:    [23-06-2026 02:32:15] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [23-06-2026 02:32:15] 127.0.0.1:51521 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+INFO:     [23-06-2026 02:32:15] 127.0.0.1:51521 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/cb2d96fc-cc55-4922-b42c-baa5a6d1c7e7/query HTTP/1.1" 200

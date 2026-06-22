@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.core.dependencies import get_current_admin
 from app.db.mysql import get_db
+from app.models.document_chunk_model import DocumentChunk
 from app.models.user_model import User
 from app.schemas.document_schema import DocumentUpdate
 from app.services.audit_log_service import AuditLogService
@@ -64,7 +65,7 @@ def list_documents(
         source_type=source_type,
         status_filter=status,
     )
-    data = [_serialize_document(document) for document in documents]
+    data = [_serialize_document(document, db) for document in documents]
     return paginated_response("Data dokumen berhasil diambil", data, page, limit, total)
 
 
@@ -75,7 +76,7 @@ def get_document(
     _: User = Depends(get_current_admin),
 ):
     document = DocumentService(db).get_document(document_id)
-    return success_response("Detail dokumen berhasil diambil", _serialize_document(document))
+    return success_response("Detail dokumen berhasil diambil", _serialize_document(document, db))
 
 
 @router.put("/{document_id}")
@@ -93,7 +94,7 @@ def update_document(
         user_id=current_user.id,
         request=request,
     )
-    return success_response("Dokumen berhasil diperbarui", _serialize_document(document))
+    return success_response("Dokumen berhasil diperbarui", _serialize_document(document, db))
 
 
 @router.delete("/{document_id}")
@@ -116,7 +117,7 @@ def delete_document(
     )
 
 
-def _serialize_document(document) -> dict:
+def _serialize_document(document, db: Session | None = None) -> dict:
     return {
         "id": document.id,
         "title": document.title,
@@ -127,6 +128,11 @@ def _serialize_document(document) -> dict:
         "source_type": document.source_type,
         "source_url": document.source_url,
         "status": document.status,
+        "total_chunks": (
+            db.query(DocumentChunk).filter(DocumentChunk.document_id == document.id).count()
+            if db is not None
+            else 0
+        ),
         "uploaded_by": document.uploaded_by,
         "created_at": document.created_at.isoformat() if document.created_at else None,
         "updated_at": document.updated_at.isoformat() if document.updated_at else None,

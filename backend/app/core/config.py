@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     APP_HOST: str = "0.0.0.0"
     APP_PORT: int = 8000
 
-    FRONTEND_URL: str = "http://localhost:5173"
+    FRONTEND_URL: str = "http://localhost:5173,http://127.0.0.1:5173"
 
     MYSQL_HOST: str = "localhost"
     MYSQL_PORT: int = 3306
@@ -31,7 +31,7 @@ class Settings(BaseSettings):
 
     GEMINI_API_KEY: str = ""
     GEMINI_LLM_MODEL: str = "gemini-1.5-flash"
-    GEMINI_EMBEDDING_MODEL: str = "text-embedding-004"
+    GEMINI_EMBEDDING_MODEL: str = "gemini-embedding-001"
     GEMINI_TEMPERATURE: float = 0.2
     GEMINI_MAX_OUTPUT_TOKENS: int = 1024
 

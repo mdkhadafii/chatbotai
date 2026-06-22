@@ -1,11 +1,24 @@
-.env
-.venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
-storage/uploads/*
-!storage/uploads/.gitkeep
-storage/processed/*
-!storage/processed/.gitkeep
-storage/chroma/*
-!storage/chroma/.gitkeep
+# Backend
+backend/.env
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/**/*.py[cod]
+backend/.pytest_cache/
+backend/.runtime/
+
+# Backend storage (keep .gitkeep)
+backend/storage/uploads/*
+!backend/storage/uploads/.gitkeep
+backend/storage/processed/*
+!backend/storage/processed/.gitkeep
+backend/storage/chroma/*
+!backend/storage/chroma/.gitkeep
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Misc
+write-test.tmp
