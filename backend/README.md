@@ -112,7 +112,7 @@ CREATE DATABASE db_chatbot CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 Buka **terminal baru** (tetap aktifkan venv), lalu jalankan ChromaDB:
 
 ```bash
-chroma run --host 127.0.0.1 --port 8001 --path storage/chroma
+python -m chromadb.cli.cli run --host 127.0.0.1 --port 8001 --path storage/chroma
 ```
 
 ChromaDB akan berjalan di: `http://127.0.0.1:8001`
@@ -124,7 +124,7 @@ ChromaDB akan berjalan di: `http://127.0.0.1:8001`
 Buka **terminal lain** (tetap di folder `backend/`, venv aktif):
 
 ```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 FastAPI akan berjalan di:
